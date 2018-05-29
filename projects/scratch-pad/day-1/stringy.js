@@ -158,7 +158,6 @@ function join(stringOne, stringTwo) {
  *
  * TIP: What property of the String do we need to compare?
  */
-function longest(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
 /**
  * Given two Strings, return the longest of the two.
