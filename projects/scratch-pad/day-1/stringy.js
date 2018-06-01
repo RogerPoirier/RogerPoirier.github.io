@@ -80,14 +80,13 @@ function toDashCase(string) {
  */
 function beginsWith(string, char) {
     // YOUR CODE BELOW HERE //
-var newString = string.toUpperCase();
-var newChar = char.toUpperCase();
-if (newChar === newString.charAt(0)){
-    return "It's a match!"
-}else{
-    return "Not a match."
-
+    var firstLetter = string.slice(0,1).toLowerCase();
+    var lowChar = char.toLowerCase();
     
+    if (firstLetter === lowChar){
+             return true
+    }   
+        return false
 
     // YOUR CODE ABOVE HERE //
 }
@@ -106,14 +105,15 @@ if (newChar === newString.charAt(0)){
  */
 function endsWith(string, char) {
     // YOUR CODE BELOW HERE //
-var newString = string.toUpperCase();
-var newChar = char.toUpperCase();
-if (newChar === newString.slice(-1)){
-    return "It's a match!"
-}else{
-    return "Not a match."
-}
-
+   
+    var lowerString = string.toLowerCase();
+    var lowerChar = char.toLowerCase();
+    var lastLetter = lowerString[lowerString.length-1];
+    
+    if (lastLetter === lowerChar) {
+        return true;
+    }
+    else return false;
 
     // YOUR CODE ABOVE HERE //
 }
@@ -125,7 +125,8 @@ if (newChar === newString.slice(-1)){
  */
 function concat(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-return stringOne.concat(" " + stringTwo)
+var combined = stringOne + stringTwo
+return combined
 
 
     // YOUR CODE ABOVE HERE //
@@ -158,26 +159,18 @@ function join(stringOne, stringTwo) {
  *
  * TIP: What property of the String do we need to compare?
  */
-    // YOUR CODE BELOW HERE //
-/**
- * Given two Strings, return the longest of the two.
- *
- * Example:
- *
- *      longest("ben", "maggie");   //-> "maggie"
- *
- * TIP: What property of the String do we need to compare?
- */
+ 
+
 function longest(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
   var one= stringOne.length;
   var two= stringTwo.length; 
   if( one < two){
-    return stringTwo + " " + "is larger."
+    return stringTwo;
   }else if (two < one){
-    return stringOne + " " + "is larger."
+    return stringOne ;
   }else{
-    return "They are equal."
+    return "They are equal.";
   }
 
 
@@ -186,7 +179,7 @@ function longest(stringOne, stringTwo) {
 }
 
 
-    // YOUR CODE ABOVE HERE //
+
 
 
 /**
@@ -202,9 +195,9 @@ function sortAscending(stringOne, stringTwo) {
   var one = stringOne.toLowerCase();
   var two = stringTwo.toLowerCase();
   if ( one > two){
-    return 1
-  }else if( one < two){
     return -1
+  }else if( one < two){
+    return 1
   }else{
     return 0
   }
@@ -227,9 +220,9 @@ function sortDescending(stringOne, stringTwo) {
   var one = stringOne.toLowerCase();
   var two = stringTwo.toLowerCase();
   if ( one < two){
-    return 1
-  }else if( one > two){
     return -1
+  }else if( one > two){
+    return 1
   }else{
     return 0
   }

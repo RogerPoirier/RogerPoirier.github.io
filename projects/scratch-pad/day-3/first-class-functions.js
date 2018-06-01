@@ -14,7 +14,11 @@
 function createGreaterThanFilter(base) {
     // YOUR CODE BELOW HERE //
     
-    
+    if (base > 1) {
+        return function(string){
+            var lastChar = string[string.length -1];
+            
+    }
     
     
     // YOUR CODE ABOVE HERE //
@@ -56,7 +60,10 @@ function createStartsWithFilter(startsWith) {
 function createEndsWithFilter(endsWith) {
     // YOUR CODE BELOW HERE //
     
-    
+     return function(string){
+            var lastChar = string[string.length -1];
+            return lastChar.toUpperCase() === endsWith.toUpperCase
+    }
     
     
     // YOUR CODE ABOVE HERE //

@@ -23,8 +23,8 @@
  *         the contact-list.
  * 
  * BONUS : add a printAllContactNames() Function to your makeContactList() factory, so that the 
- *         contact-list returned has an all() API. The printAllContactNames() Function should 
- *         return a String formated with all the full-names of the separated 
+ *         contact-list returned has an pringAllContactNames() API. The printAllContactNames() Function should 
+ *         return a String formated with all the full-names of the contact list separated 
  *         with a line-break, like so:
  *          
  *         myContacts.printAllContactNames(); // => Max Gaudin
@@ -37,6 +37,13 @@
 
 // YOUR CODE GOES BELOW HERE //
 function makeContact(id, nameFirst, nameLast) {
+    var contact = {
+        id: id,
+        nameFirst: nameFirst,
+        nameLast: nameLast
+        
+    };
+    return contact;
 
 } 
 
@@ -45,14 +52,28 @@ function makeContactList() {
     /*
      * You need something here to hold contacts. See length api for a hint:
      */
-    var contacts;
+    var contacts = [];
     
     return {
-        // we implemented the length api for you //
+       // we implemented the length api for you //
         length: function() {
             return contacts.length;
+        },
+        addContact: function (contact){
+            return contacts.push(contact);
+        },
+        findContact: function (fullName){
+            
+            for (var i = 0; i < contacts.length ; i++) {
+                  var contact = contacts[i];
+                  console.log(contact);
+            }if(fullName = nameFirst + nameLast){
+                console.log(contact);
+            
         }
+        
     }
+        
 }
 
 
